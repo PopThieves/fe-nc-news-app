@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
 import ArticleCard from './ArticleCard'
+import Loader from './Loader'
 
 class ArticleList extends Component {
     state = {
@@ -26,8 +27,8 @@ class ArticleList extends Component {
     }
 
     render() {
-        const { articles } = this.state
-        // if (isLoading) return <Loader/>
+        const { articles, isLoading } = this.state
+        if (isLoading) return <Loader/>
         return (
             <main className="main">
                 {articles.map(article => {
