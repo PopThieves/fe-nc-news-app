@@ -7,3 +7,20 @@
 nav {
   background-color: #84D2F6;
 }
+
+html { 
+  background-color: aquamarine;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.article-card {
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+}

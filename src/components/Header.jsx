@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from '@reach/router'
 
 const Header = () => {
     return (
-        <h1>Northcoders News</h1>
+        <Link to='/'>
+            <h1>Northcoders News</h1>
+        </Link>
     )
 }
 
