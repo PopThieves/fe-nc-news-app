@@ -10,6 +10,7 @@ const ArticleCard = (props) => {
             </Link>
             <li className='author'>Author: {props.author}</li>
             <li className='body'>{props.body}</li>
+            <li>Votes: {props.votes}</li>
         </ul>
     )
 }

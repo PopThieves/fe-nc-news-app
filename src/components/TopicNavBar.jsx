@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from '@reach/router'
 
-class NavBar extends Component {
+class TopicNavBar extends Component {
     state = {
         topics: [],
     }
@@ -31,4 +31,4 @@ class NavBar extends Component {
 }
 
 
-export default NavBar;
+export default TopicNavBar;

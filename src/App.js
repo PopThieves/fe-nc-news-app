@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import NavBar from './components/NavBar';
+import TopicNavBar from './components/TopicNavBar';
 import ArticleList from './components/ArticleList'
 import SingleArticle from './components/SingleArticle'
 import { Router } from '@reach/router'
@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <NavBar />
+      <TopicNavBar />
+      {/* <SortNavBar /> */}
       <Router>
         <ArticleList path='/'/>
         <ArticleList path='/topics/:topic'/>
