@@ -19,7 +19,6 @@ class TopicNavBar extends Component {
         return (
             <nav>
                 {topics.map(topic => {
-                    console.log(topic);
                     return <Link to={`/topics/${topic.slug}`} key={topic.slug}><button>{topic.slug}</button>
                     </Link>
                 })}

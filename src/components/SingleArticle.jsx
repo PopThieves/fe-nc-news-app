@@ -14,15 +14,14 @@ class SingleArticle extends Component {
         axios
         .get(`https://nc-news-23.herokuapp.com/api/articles/${this.props.article_id}`)
         .then(({ data }) => {
-            console.log(data)
             this.setState({ articleInfo: {...data.article}, isLoading: false});
         })
-        .catch((response) => {
-            console.log(response)
+        .catch((error) => {
+            console.log(error.response)
             this.setState({
                 error: {
-                    // status: response.status,
-                    message: response.msg,
+                    status: error.response.request.status,
+                    status_message: error.response.request.statusText,
                 },
             })
         })

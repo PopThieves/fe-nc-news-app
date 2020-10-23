@@ -3,8 +3,8 @@ import React from 'react';
 const ErrorDisplay = (props) => {
     return (
         <div>
-            <p>
-                Error! Code:{props.status}, {props.msg}
+            <p className='error_message'>
+                Error: {props.status}! {props.status_message}
             </p>
         </div>
     );
