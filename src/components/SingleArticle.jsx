@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import ErrorDisplay from '../components/ErrorDisplay'
 
 
 class SingleArticle extends Component {
     state = {
         articleInfo: {},
         isLoading: true,
+        error: null
     }
 
     componentDidMount() {
@@ -15,14 +17,27 @@ class SingleArticle extends Component {
             console.log(data)
             this.setState({ articleInfo: {...data.article}, isLoading: false});
         })
+        .catch((response) => {
+            console.log(response)
+            this.setState({
+                error: {
+                    // status: response.status,
+                    message: response.msg,
+                },
+            })
+        })
     }
 
 
     render() {
+        const { articleInfo, error } = this.state;
+        if(error) return (
+        <ErrorDisplay {...error}/>
+        );
         return (
             <>
-            <h1>{this.state.articleInfo.title}</h1>
-            <p>{this.state.articleInfo.body}</p>
+            <h1>{articleInfo.title}</h1>
+            <p>{articleInfo.body}</p>
             </>
         )
     }

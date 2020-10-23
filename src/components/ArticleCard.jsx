@@ -10,7 +10,9 @@ const ArticleCard = (props) => {
             </Link>
             <li className='author'>Author: {props.author}</li>
             <li className='body'>{props.body}</li>
+            <button>▲</button>
             <li>Votes: {props.votes}</li>
+            <button>▼</button>
         </ul>
     )
 }
